@@ -6,7 +6,7 @@
   "main": "main.js",
   "scripts": {
     "start": "node server.js",
-    "clean": "rmdir /s /q dist",
+    "clean": "rimraf dist",
     "build": "npm run clean && electron-builder"
   },
   "build": {
@@ -106,3 +106,4 @@
   "keywords": [],
   "type": "commonjs"
 }
+
