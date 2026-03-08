@@ -6,7 +6,7 @@ const app = express();
 const db = mysql.createPool({
   host: "localhost",
   user: "u445028788_lamentemaestra",
-  password: "2N28slK!.!ZQ64[T",
+  password: "0b?X#AW6y*F",
   database: "u445028788_lamentemaestra",
   port: 3306
 });
@@ -27,6 +27,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Servidor corriendo en puerto " + PORT);
 });
+
 
 
 
