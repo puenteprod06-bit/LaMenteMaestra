@@ -1,17 +1,27 @@
-const express = require("express")
-const cors = require("cors")
+const express = require("express");
+const mysql = require("mysql2");
 
-const app = express()
+const app = express();
 
-app.use(cors())
-app.use(express.json())
+const db = mysql.createPool({
+  host: "srv798.hstgr.io",
+  user: "u445028788_lamentemaestra",
+  password: "TU_PASSWORD",
+  database: "u445028788_lamentemaestra",
+  port: 3306
+});
 
 app.get("/", (req, res) => {
-    res.send("Servidor La Mente Maestra funcionando 🚀")
-})
+  db.query("SELECT 1", (err, result) => {
+    if (err) {
+      res.send("Error conectando a la base");
+      console.error(err);
+    } else {
+      res.send("Base de datos conectada correctamente 🚀");
+    }
+  });
+});
 
-const PORT = process.env.PORT || 3000
-
-app.listen(PORT, () => {
-    console.log("Servidor iniciado en puerto " + PORT)
-})
+app.listen(3000, () => {
+  console.log("Servidor corriendo en puerto 3000");
+});
