@@ -4,7 +4,7 @@ const mysql = require("mysql2");
 const app = express();
 
 const db = mysql.createPool({
-  host: "srv798.hstgr.io",
+  host: "localhost",
   user: "u445028788_lamentemaestra",
   password: ">Yd7/yo1?Vs",
   database: "u445028788_lamentemaestra",
@@ -27,3 +27,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Servidor corriendo en puerto " + PORT);
 });
+
