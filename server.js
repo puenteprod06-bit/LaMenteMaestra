@@ -14,14 +14,15 @@ const db = mysql.createPool({
 app.get("/", (req, res) => {
   db.query("SELECT 1", (err, result) => {
     if (err) {
-      res.send("Error conectando a la base");
-      console.error(err);
+      res.send("Error conectando a MySQL");
     } else {
-      res.send("Base de datos conectada correctamente 🚀");
+      res.send("Servidor y base de datos funcionando 🚀");
     }
   });
 });
 
-app.listen(3000, () => {
-  console.log("Servidor corriendo en puerto 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en puerto ${PORT}`);
 });
