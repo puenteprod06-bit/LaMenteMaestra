@@ -14,6 +14,7 @@ const db = mysql.createPool({
 app.get("/", (req, res) => {
   db.query("SELECT 1", (err, result) => {
     if (err) {
+      console.error(err);
       res.send("Error conectando a MySQL");
     } else {
       res.send("Servidor y base de datos funcionando 🚀");
@@ -24,5 +25,5 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en puerto ${PORT}`);
+  console.log("Servidor corriendo en puerto " + PORT);
 });
